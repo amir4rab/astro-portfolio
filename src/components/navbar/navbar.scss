@@ -1,0 +1,96 @@
+@import '../../styles/baseStyles';
+
+.main-navbar {
+  height: 5vh;
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: .5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $black-0;
+
+  .links {
+    display: none;
+  }
+
+  .hamburger-button {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0rem;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 1.5rem;
+      height: 1.5rem;
+      object-fit: scale-down;
+    }
+  }
+}
+
+.main-overlay {
+  position: fixed;
+  left: -100%;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  transition: transform .3s ease-in-out;
+  background: $black-1;
+  // transform: translate(100%, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.open {
+    transform: translate(100%, 0);
+  }
+  .links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    a {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+    button {
+      background: transparentize($white-0, .9);
+      color: $red-0;
+      border: none;
+      font-size: 1rem;
+    }
+  }
+}
+
+@include forDesktopUp {
+  .main-navbar {
+    max-width: $desktopMaxWidth;
+    margin: auto;
+    padding: 0 .5rem;
+    .links {
+      display: block;
+      a {
+        text-decoration: underline;
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  
+    .hamburger-button {
+      display: none;
+    }
+  }
+  .main-overlay {
+    display: none;
+  }
+}
