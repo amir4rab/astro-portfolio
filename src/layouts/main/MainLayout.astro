@@ -1,0 +1,12 @@
+---
+import Navbar from '../../components/navbar/navbar.tsx';
+---
+<style lang="scss">
+  @import "./MainLayout.scss";
+</style>
+<>
+  <Navbar client:load />
+  <main class="mainLayout">
+    <slot />
+  </main>
+</>
