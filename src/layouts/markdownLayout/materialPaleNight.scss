@@ -18,6 +18,7 @@ pre {
 	background-color: $background-code;
 	border-radius: .5rem;
 	color: $white-code;
+	overflow-x: scroll;
 }
 
 .language-css > code,
