@@ -1,0 +1,15 @@
+---
+
+---
+<style lang='scss'>
+  @import '../../../styles/baseStyles';
+  .custom-title {
+    color: $highlight;
+    padding-bottom: 2rem;
+    @include forDesktopUp {
+      font-size: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+</style>
+<h1 class="custom-title"><slot /></h1>

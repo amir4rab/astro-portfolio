@@ -1,0 +1,41 @@
+---
+import Title from '../general/title/Title.astro';
+import Link from '../general/link/Link.astro';
+---
+<style lang='scss'>
+  @import '../../styles/baseStyles';
+  .about-box {
+    padding: 2rem 0;
+    line-height: 170%;
+    .subtitle {
+      padding-bottom: 1.25rem;
+    }
+    .text {
+      & b {
+        font-weight: 400;
+        color: $highlight;
+        padding: 0 .25rem;
+      }
+    }
+    ul {
+      padding-left: 1rem;
+    }
+  }
+</style>
+<article class='about'>
+  <Title>About me</Title>
+  <div class='about-box'>
+    <h3 class='subtitle'>Programming Knowledge</h3>
+    <p class='text'>
+      Hi, my name is <b>Amir Arab</b>, <b>Computer Engineering</b> student and <b>Front-end Developer</b>, experienced with <b>Javascript</b> and <b>Typescript</b>. i have been developing front-end website with <Link href='https://reactjs.org/'>React.js</Link> and fullstack applications with <Link href='https://nextjs.org'>Next.js</Link>, i am also familiar with <Link href='https://gatsbyjs.com/'>Gatsby.js</Link>, <Link href='https://angular.io'>Angular</Link>, <Link href='https://expressjs.com'>Express.js</Link>, <Link href='https://mongodb.com'>mongodb</Link>, <Link href='https://astro.build'>Astro</Link> and <Link href='https://socket.io'>socket.io</Link>.
+    </p>
+  </div>
+  <div class='about-box'>
+    <h3 class='subtitle'>Languagical knowledge</h3>
+    <ul class='list'>
+      <li>Persian: native</li>
+      <li>English: B2/C1 (estimated)</li>
+      <li>German: A2 (estimated)</li>
+    </ul>
+  </div>
+</article>

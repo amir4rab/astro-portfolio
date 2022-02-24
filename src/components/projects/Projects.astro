@@ -1,0 +1,11 @@
+---
+import { Project } from '../../types/Project'
+import ProjectsDisplay from './projectsDisplay/projectsDisplay.tsx';
+export interface Props {
+  projectsData: Project[]
+}
+const { projectsData } = Astro.props;
+---
+<main>
+  <ProjectsDisplay client:load projectsArr={ projectsData } />
+</main>

@@ -1,0 +1,145 @@
+---
+import { Icon } from 'astro-icon'
+---
+<style lang="scss">
+  /* @import './Main.scss'; */
+  @import '../../styles/baseStyles';
+  .main {
+    height: 80vh;
+    padding: 10vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  header {
+    h1, h3 {
+      color: $white-0;
+      & b {
+        color: $highlight;
+        font-weight: 400;
+      }
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    h1 {
+      margin-top: .75rem;
+      font-size: 3rem;
+      font-weight: 400;
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .links-area {
+    display: none;
+    a {
+      &:not(:last-child) {
+        margin-right: .75rem;
+      }
+      svg {
+        max-width: 2rem;
+        max-height: 2rem;
+      }
+    }
+  }
+  .buttons-area {
+    font-size: 1rem;
+    display: flex;
+    a {
+      display: block;
+      padding: .5em 1.25em;
+      border-radius: .4rem;
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+      transition: background .15s ease-in-out, color .15s ease-in-out;
+    }
+    .sub-link {
+      background: transparentize( $highlight, .85 );
+      color: $highlight;
+      &:hover {
+        background: transparentize( $highlight, .5 );
+      }
+    }
+    .main-link {
+      background: $highlight;
+      color: $black-0;
+      &:hover {
+        color: $highlight;
+        background: transparentize( $highlight, .85 );
+      }
+    } 
+  }
+  @include forDesktopUp {
+    .main {
+      height: 85vh;
+      padding: 10vh 0;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    header {
+      h3 {
+        font-size: 2rem;
+      }
+      h1 {
+        & b {
+          font-weight: 600;
+        }
+        font-size: 4rem;
+        font-weight: 600;
+      }
+    }
+    footer {
+      align-items: center;
+      justify-content: space-between;
+    }
+    .links-area {
+      display: flex;
+      a {
+        min-width: 2rem;
+        min-height: 2rem;
+      }
+    }
+    .buttons-area {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+<article class="main">
+  <header class="header">
+    <h3>
+      Hi, my name is <b>Amir Arab</b>
+    </h3>
+    <h1>
+      I develop <b>Fast</b> and <b>Reliable</b> Web-apps
+    </h1>
+  </header>
+  <footer>
+    <div class="links-area">
+      <a href='https://github.com/amir4rab' target='_blank' rel='noreferrer'>
+        <Icon name='simple-icons:github' />
+      </a>
+      <a href='https://codesandbox.io/u/amir4rab' target='_blank' rel='noreferrer'>
+        <Icon name='simple-icons:codesandbox' />
+      </a>
+      <a href='https://codepen.io/amir4rab' target='_blank' rel='noreferrer'>
+        <Icon name='simple-icons:codepen' />
+      </a>
+      <a href='https://www.npmjs.com/~amir4rab' target='_blank' rel='noreferrer'>
+        <Icon name='simple-icons:npm' />
+      </a>
+    </div>
+    <div class="buttons-area">
+      <a class="sub-link" href="/about">
+        About
+      </a>
+      <a class="main-link" href="/projects">
+        Projects
+      </a>
+    </div>
+  </footer>
+</article>

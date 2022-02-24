@@ -1,0 +1,49 @@
+---
+import Title from '../general/title/Title.astro';
+import { Icon } from 'astro-icon'
+---
+<style lang='scss'>
+  .contact-group {
+    padding: 2rem 0;
+  }
+  .links-area {
+    padding-top: 2rem;
+    a {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      &:hover, &:focus-visible {
+        p {
+          text-decoration: underline;
+        }
+      }
+      display: flex;
+      align-items: center;
+    }
+  }
+  svg {
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+    margin-right: .75rem;
+  }
+</style>
+<article>
+  <Title>Contact</Title>
+  <div class='contact-group'>
+    <h3 class='subtitle'>Social links</h3>
+    <div class='links-area'>
+      <a href='https://github.com/amir4rab' target='_blank' rel='noreferrer'>
+        <Icon name='simple-icons:github' /> <p>Github</p>
+      </a>
+      <a href='https://codesandbox.io/u/amir4rab' target='_blank' rel='noreferrer'>
+        <Icon name='simple-icons:codesandbox' /> <p>Codesandbox</p>
+      </a>
+      <a href='https://codepen.io/amir4rab' target='_blank' rel='noreferrer'>
+        <Icon name='simple-icons:codepen' /> <p>Codepen</p>
+      </a>
+      <a href='https://www.npmjs.com/~amir4rab' target='_blank' rel='noreferrer'>
+        <Icon name='simple-icons:npm' /> <p>Npm</p>
+      </a>
+    </div>
+  </div>
+</article>

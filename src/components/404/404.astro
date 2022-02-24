@@ -1,0 +1,78 @@
+---
+import { Icon } from 'astro-icon'
+---
+<style lang='scss'>
+  @import '../../styles/baseStyles';
+  .error-page {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .code {
+    
+  }
+  .title {
+    font-size: 2rem;
+    padding: 3rem;
+    text-align: center;
+  }
+  .subtitle {
+    padding-bottom: 1rem;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .link {
+    display: block;
+    padding: 1rem;
+    background: $black-2;
+    width: 48%;
+    margin-top: .75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: .5rem;
+    transition: background .15s ease-in-out;
+    &:hover {
+      background: transparentize($highlight, .75);
+    }
+  }
+  svg {
+    max-height: 1.5rem;
+    max-width: 1.5rem;
+    margin-bottom: .75rem;
+  }
+  @include forDesktopUp {
+    .error-page {
+      max-width: 600px;
+      margin: auto;
+    }
+  }
+</style>
+
+<article class='error-page'>
+  <h1 class='title'>Not found</h1>
+  <p class='subtitle'>It seems like you are lost, here are couple of Links to visit</p>
+  <div class='links'>
+    <a class='link' href='/'>
+      <Icon name='ion:home' />
+      <p>Home</p>
+    </a>
+    <a class='link' href='/projects'>
+      <Icon name='ion:ios-apps' />
+      <p>Projects</p>
+    </a>
+    <a class='link' href='/about'>
+      <Icon name='ion:information' />
+      <p>About</p>
+    </a>
+    <a class='link' href='/contact'>
+      <Icon name='ion:call' />
+      <p>Contact</p>
+    </a>
+  </div>
+</article>
