@@ -1,0 +1,26 @@
+---
+import Head from '../../components/head/HeadCommon.astro';
+import MainLayout from '../main/MainLayout.astro';
+import ProjectView from '../../components/projects/projectView/projectView.tsx'
+import './materialPaleNight.scss'
+import './slot.scss';
+// import HeadSEO from '../components/head/HeadSEO.astro';
+
+const { content } = Astro.props;
+
+console.log(content.title)
+---
+<html>
+  <head>
+    <Head title={ content.title } />
+    <!-- <HeadSEO title='my website' /> -->
+  </head>
+  <body>
+    <MainLayout>
+      <ProjectView client:idle projectData={ content } key='' projectPage={ true }/>
+      <section class="slot">
+        <slot/>
+      </section>
+    </MainLayout>
+  </body>
+</html>
