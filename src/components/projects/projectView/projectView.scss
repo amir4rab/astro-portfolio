@@ -1,0 +1,99 @@
+@import '../../../styles/baseStyles';
+
+.projectView {
+  padding: 2rem 0;
+  &:not(:last-child) {
+    border-bottom: .1rem solid transparentize($white-0, .75);
+  }
+  &.projectPage {
+    padding: 0;
+  }
+  display: block;
+  .header {
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    svg {
+      margin-right: .75rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    h3 {
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: $white-0;
+    }
+  }
+  .thumbnail {
+    margin-bottom: .5rem;
+    max-width: 100%;
+    border-radius: .5rem;
+  }
+  svg {
+    fill: $highlight;
+  }
+  .short-info {
+    font-size: 1rem;
+    line-height: 160%;
+  }
+  .read-more {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2rem 0;
+    button {
+      border: none;
+      background: $highlight;
+      &:hover {
+        cursor: pointer;
+      }
+      &:hover, &:focus-visible {
+        background-color: darken($highlight, 5);
+      }
+    }
+  }
+  .link-list {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: .75rem 0;
+    a {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      text-decoration: underline;
+      &:not(:last-child) {
+        margin-bottom: .75rem;
+      }
+      svg {
+        width: 1rem;
+        height: 1rem;
+        margin-right: .5rem;
+      }
+    }
+  }
+  .tags {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    .tag {
+      font-size: .8rem;
+      padding: .5rem;
+      background: $black-1;
+      border-radius: .4rem;
+      margin-bottom: .5rem;
+      &:not(:first-child) {
+        margin-left: .75rem;
+      }
+    }
+  }
+}
+
+@include forDesktopUp {
+  .projectView {
+    padding: 2rem 0;
+    &.projectPage {
+      padding: 0rem;
+    }
+  }
+}

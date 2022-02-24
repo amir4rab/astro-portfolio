@@ -1,0 +1,110 @@
+@import '../../../styles/baseStyles';
+
+.filter-group {
+  height: 100%;
+  overflow: hidden;
+  &.open{
+    .header {
+      border-bottom: .1rem solid transparent;
+    }
+    .header svg {
+      transform: rotate(180deg);
+      opacity: .75;
+    }
+    .content {
+      padding: .5rem 0;
+    }
+  }
+  .header{
+    padding: 1rem 2rem;
+    background: transparent;
+    border: none;
+    color: $white-0;
+    transition: border .15s ease-in-out;
+    border-bottom: .1rem solid transparentize($white-0, .75);
+    width: 100%;
+    border-radius: 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover, &:focus-visible {
+      background: transparentize($white-0, .85);
+    }
+    svg {
+      opacity: .5;
+      margin-right: .5rem;
+      fill: $white-0;
+      max-width: .75rem;
+      max-height: .75rem;
+      transition: transform .15s ease-in-out, opacity .15s ease-in-out;
+    }
+  }
+  .content{
+    transition: height .2s ease-in-out, padding .2s ease-in-out;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0;
+
+    button {
+      height: 2rem;
+      &:not(:last-child) {
+        margin-bottom: .25rem;
+      }
+      border: none;
+      background: $black-2;
+      color: $white-0;
+      &:not(.active):hover {
+        cursor: pointer;
+      }
+      &:not(.active):hover, &:not(.active):focus-visible {
+        background-color: lighten( $black-2, 5 );
+      }
+      &.active {
+        background: $highlight;
+        color: $black-2;
+      }
+    }
+  }
+}
+
+.projects-filter {
+  position: sticky;
+  top: 10vh;
+  h1 {
+    padding-bottom: 2rem;
+  }
+  .filter-sub-header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;
+    align-items: center;
+    align-content: center;
+    padding-bottom: 1.5rem;
+    .clear-filters {
+      color: $red-0;
+      border: none;
+      padding: 0;
+      background: transparent;
+      font-size: 1rem;
+      &:hover {
+        cursor: pointer;
+      }
+      &:hover, &:focus-visible {
+        color: lighten($red-0, 15);
+      }
+    }
+  }
+  @include forDesktopUp {
+    h1 {
+      font-size: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+}
