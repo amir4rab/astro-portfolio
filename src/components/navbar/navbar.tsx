@@ -1,4 +1,3 @@
-// import React from 'p'
 import { useState } from 'preact/hooks';
 import './navbar.scss';
 

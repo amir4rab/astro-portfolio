@@ -13,6 +13,7 @@ export default {
   },
   renderers: [
     '@astrojs/renderer-preact',
+    '@astrojs/renderer-svelte'
   ],
   vite: {
     ssr: {

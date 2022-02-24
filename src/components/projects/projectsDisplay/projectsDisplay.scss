@@ -4,13 +4,6 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  // .filters-wrapper {
-  //   width: 27.5%;
-  //   border-right: .1rem solid transparentize($white-0, .75);
-  // }
-  // .projects-wrapper {
-  //   width: 67.5%;
-  // }
 }
 
 @include forDesktopUp {
