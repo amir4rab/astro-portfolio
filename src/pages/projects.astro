@@ -1,0 +1,18 @@
+---
+import Head from '../components/head/HeadCommon.astro';
+import MainLayout from '../layouts/main/MainLayout.astro';
+import Projects from '../components/projects/Projects.astro';
+
+import { Project } from '../types/Project.ts'
+const projectsData = Astro.fetchContent('./projects/*.md');
+---
+<html lang="en">
+	<head>
+		<Head title="amir4rab - projects" />
+	</head>
+	<body>
+		<MainLayout>
+			<Projects projectsData={ projectsData as Project[] } />
+		</MainLayout>
+	</body>
+</html>
