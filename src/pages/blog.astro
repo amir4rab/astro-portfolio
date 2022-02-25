@@ -1,0 +1,26 @@
+---
+import Head from '../components/head/HeadCommon.astro';
+import MainLayout from '../layouts/main/MainLayout.astro';
+import Blogs from '../components/blogs/Blogs.astro';
+
+import { Blog } from '../types/Blog.ts'
+const blogsData = Astro.fetchContent('./blog/*.md');
+
+const sortedArr = blogsData.sort(( blogA, blogB ) => {
+	if ( blogA.date > blogB.date ) {
+		return -1;
+	} else {
+		return 1;
+	}
+})
+---
+<html lang='en'>
+	<head>
+		<Head title='amir4rab - blog' />
+	</head>
+	<body>
+		<MainLayout>
+			<Blogs blogsData={ sortedArr as Blog[] } />
+		</MainLayout>
+	</body>
+</html>
