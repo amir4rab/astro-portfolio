@@ -2,8 +2,10 @@
 
 .main-navbar {
   height: 5vh;
-  position: sticky;
-  left: 0;
+  position: fixed;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, 0);
   top: 0;
   width: 100%;
   padding: .5rem 2rem;
@@ -74,7 +76,7 @@
   .main-navbar {
     max-width: $desktopMaxWidth;
     margin: auto;
-    padding: 0 .5rem;
+    padding: 0;
     .links {
       display: block;
       a {

@@ -5,17 +5,18 @@
   import './projectsDisplay.scss';
 
   export let projectsArr;
-  const filters = [];
-  const filteredProjects = [ ...projectsArr ];
+
+  let filters = [];
+  let filteredProjects = [ ...projectsArr ];
 
   const setFilters = ( filterArr ) => {
-    const filters = [ ...filterArr ];
+    filters = [ ...filterArr ];
 
     if ( filters.length === 0 ) {
-      setFilteredProjects(projectsArr)
+      filteredProjects = [ ...projectsArr ];
       return;
     };
-    const filteredProjects = projectsArr.filter( project =>  {
+    const filterd = projectsArr.filter( project => {
       let isIncluded = true;
       for ( const filter of filters ) {
         if( !project.tags.includes(filter) ) {
@@ -25,6 +26,7 @@
       }
       return isIncluded;
     });
+    filteredProjects = [ ...filterd ];
   } 
 </script>
 
@@ -33,8 +35,8 @@
     <ProjectsFilter filters={ filters } setFilters={ setFilters }/>
   </div>
   <div class='projects-wrapper'>
-    { #each filteredProjects as project }
-      <ProjectView key={ project.slug } projectData={ project } />
+    { #each filteredProjects as project ( project.slug )}
+      <ProjectView projectData={ project }  />
     { /each }
     { #if filteredProjects.length === 0  }
       <p style={{ padding: '2rem 0', textAlign: 'center' }}>Sorry, i have no project with the specified filters!</p>

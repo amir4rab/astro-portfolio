@@ -1,12 +1,12 @@
 @import '../../styles/baseStyles';
 
 .mainLayout {
-  padding: 2rem;
+  padding: 5vh 2rem 2rem 2rem;
 }
 @include forDesktopUp {
   .mainLayout {
     max-width: $desktopMaxWidth;
     margin: auto;
-    padding: 5vh 0;
+    padding: 10vh 0 5vh 0;
   }
 }

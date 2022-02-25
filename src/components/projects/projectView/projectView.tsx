@@ -18,7 +18,7 @@ function ProjectView({ projectData, key, projectPage = false }:{ projectData: Pr
         <h3>{ title }</h3>
       </div>
       {
-        thumbnail && <img className='thumbnail' src={ thumbnail } alt={ title } /> 
+        thumbnail && <img lazy className='thumbnail' src={ thumbnail } alt={ title } /> 
       }
       <p className='short-info'>
         { shortInfo }

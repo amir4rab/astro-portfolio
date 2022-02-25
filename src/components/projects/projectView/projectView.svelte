@@ -1,9 +1,7 @@
 <script>
-  // import { Project } from '../../../types/Project';
   import ProjectIcon from '../projectIcon/projectIcon.svelte';
   import './projectView.scss';
 
-  // function ProjectView({ projectData, key, projectPage = false }:{ projectData: Project, key: string, projectPage?: boolean }) {
   export let projectData;
   export let projectPage = false;
   const { github, shortInfo, slug, tags, title, websiteAddress, thumbnail, npmPackage } = projectData;
@@ -20,7 +18,7 @@
     <h3>{ title }</h3>
   </div>
   { #if thumbnail !== null }
-    <img class='thumbnail' src={ thumbnail } alt={ title } /> 
+    <img class='thumbnail' lazy src={ thumbnail } alt={ title } /> 
   { /if }
   <p class='short-info'>
     { shortInfo }

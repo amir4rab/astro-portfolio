@@ -1,4 +1,3 @@
-<!-- import { useState } from 'preact/hooks'; -->
 <script>
   import './projectsFilter.scss';
   import FilterGroup from './filterGroup.svelte';
@@ -104,7 +103,6 @@
 
   const toggleFilterGroupState = ( filterGroupName ) => {
     currentOpenFilterGroup = currentOpenFilterGroup === filterGroupName ? null : filterGroupName;
-    // setCurrentOpenFilterGroup(( currentActiveFilterGroup ) => currentActiveFilterGroup === filterGroupName ? null : filterGroupName )
   }
 
 </script>
@@ -113,11 +111,16 @@
   <h1>Projects</h1>
   <div class='filter-sub-header'>
     <h3>
-      Filters { filters.length !== 0 ? filters.length : null }
+      Filters 
+      {#if filters.length !== 0 }
+        { filters.length }
+      {/if}
     </h3>
-    <button style={{ display: filters.length !== 0 ? 'block' : 'none' }} class='clear-filters' onClick={ () => setFilters([]) }>
-      clear filters
-    </button>
+    { #if filters.length !== 0 }
+      <button class='clear-filters' on:click={ () => setFilters([]) }>
+        clear filters
+      </button>
+    { /if }
   </div>
   <div>
     <FilterGroup 
