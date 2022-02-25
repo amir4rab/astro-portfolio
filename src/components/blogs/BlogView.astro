@@ -1,0 +1,47 @@
+---
+import { Blog } from '../../types/Blog.ts';
+export interface Props {
+  blogData: Blog
+}
+const { blogData } = Astro.props;
+const date = new Date(blogData.date);
+date.getFullYear
+---
+<style lang="scss">
+  @import '../../styles/baseStyles';
+  article {
+    width: 100%;
+    padding-bottom: 5vh;
+  }
+  .title {
+    padding-bottom: .75rem;
+  }
+  .thumbnail {
+    max-width: 100%;
+    border-radius: .4rem;
+    margin-bottom: .75rem;
+  }
+  .details {
+    display: flex;
+    justify-content: space-between;
+    padding-top: .5rem;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  @include forDesktopUp {
+    article {
+      width: 45%;
+      padding-bottom: 5vh;
+    }
+  }
+</style>
+<article>
+  <h2 class='title'>{ blogData.title }</h2>
+  <img class='thumbnail' src={ blogData.thumbnail } />
+  <p class='discription'>{ blogData.shortInfo }</p>
+  <div class='details'>
+    <p>{ `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}` }</p>
+    <a href={ `./blog/${blogData.slug}` }>read</a>
+  </div>
+</article>

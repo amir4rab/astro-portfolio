@@ -1,0 +1,26 @@
+---
+import { Blog } from '../../types/Blog.ts';
+import BlogView from './BlogView.astro';
+import Title from '../general/title/Title.astro';
+
+export interface Props {
+  blogsData: Blog[]
+}
+const { blogsData } = Astro.props;
+---
+<style lang="scss">
+  .blogs-wrapper {
+    padding-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+</style>
+<div>
+  <Title>Blog</Title>
+  <div class="blogs-wrapper">  
+    {
+      blogsData.map(( blog: Blog ) => <BlogView blogData={ blog } />)
+    }
+  </div>
+</div>
