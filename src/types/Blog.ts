@@ -1,13 +1,10 @@
-export type Project = {
+export type Blog = {
   title: string,
   slug: string,
   thumbnail: string | null,
-  specialProject: boolean,
-  github: string | null,
-  websiteAddress: string | null,
-  npmPackage: string | null,
   tags: string[],
   shortInfo: string,
+  date: number;
   astro: {
     header: object[],
     source: string,
@@ -35,4 +32,4 @@ export type Project = {
   url: string
 }
 
-export default Project;
+export default Blog;
