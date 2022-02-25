@@ -1,8 +1,9 @@
 ---
 layout: ../../layouts/markdownLayout/MarkdownLayout.astro
+type: project
 title: Link hub
 slug: link-hub
-thumbnail: /images/link-hub.png
+thumbnail: /images/projects/link-hub.png
 specialProject: true
 github: https://github.com/amir4rab/linkhub
 websiteAddress: https://amir4rab-linkhub.vercel.app/

@@ -1,5 +1,6 @@
 ---
 layout: ../../layouts/markdownLayout/MarkdownLayout.astro
+type: project
 title: Web Rtc Connector
 slug: web-rtc-connector
 thumbnail: null

@@ -1,8 +1,9 @@
 ---
 layout: ../../layouts/markdownLayout/MarkdownLayout.astro
+type: project
 title: Web3 hot wallet
 slug: web3-hot-wallet
-thumbnail: /images/web3-hot-wallet.png
+thumbnail: /images/projects/web3-hot-wallet.png
 specialProject: true
 github: https://github.com/amir4rab/web3wallet
 websiteAddress: https://web3wallet.amir4rab.site

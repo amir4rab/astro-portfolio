@@ -1,5 +1,6 @@
 ---
 layout: ../../layouts/markdownLayout/MarkdownLayout.astro
+type: project
 title: Key Event
 slug: key-event
 thumbnail: null
