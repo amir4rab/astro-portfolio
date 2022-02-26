@@ -3,7 +3,7 @@ layout: ../../layouts/markdownLayout/MarkdownLayout.astro
 type: blog
 slug: astro-syntax-highlighting
 title: Astro syntax highlighting
-date: 1626874219785
+date: 1645853424300
 thumbnail: /images/blogs/astro-syntax-highlighting.jpg
 tags:
   - astro
