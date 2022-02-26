@@ -1,0 +1,41 @@
+---
+const OPEN_GRAPH = {
+  image: {
+		src: '/banner.svg',
+		alt: 'Amir4rab' + ' Front-end Developer',
+	},
+	twitter: 'Amir4rab',
+}
+const SITE = {
+	title: 'Amir4rab',
+	description: 'I am amir arab, front-end developer.',
+	defaultLanguage: 'en_US',
+};
+const canonicalURL = 'https://amir4rab.com'
+
+const formattedContentTitle = SITE.title;
+const imageSrc = OPEN_GRAPH.image.src;
+const canonicalImageSrc = new URL(imageSrc, Astro.site);
+const imageAlt = OPEN_GRAPH.image.alt;
+---
+
+<!-- Page Metadata -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- OpenGraph Tags -->
+<meta property="og:title" content={formattedContentTitle} />
+<meta property="og:type" content="article" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:locale" content={SITE.defaultLanguage} />
+<meta property="og:image" content={canonicalImageSrc} />
+<meta property="og:image:alt" content={imageAlt} />
+<meta name="description" property="og:description" content={SITE.description} />
+<meta property="og:site_name" content={SITE.title} />
+
+<!-- Twitter Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={OPEN_GRAPH.twitter} />
+<meta name="twitter:title" content={formattedContentTitle} />
+<meta name="twitter:description" content={SITE.description} />
+<meta name="twitter:image" content={canonicalImageSrc} />
+<meta name="twitter:image:alt" content={imageAlt} />
