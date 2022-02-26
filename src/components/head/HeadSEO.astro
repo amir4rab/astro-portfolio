@@ -14,7 +14,6 @@ const SITE = {
 const canonicalURL = 'https://amir4rab.com'
 
 const formattedContentTitle = SITE.title;
-const imageSrc = OPEN_GRAPH.image.src;
 const canonicalImageSrc = `${canonicalURL}${OPEN_GRAPH.image.src}`;
 const imageAlt = OPEN_GRAPH.image.alt;
 ---
@@ -39,3 +38,19 @@ const imageAlt = OPEN_GRAPH.image.alt;
 <meta name="twitter:description" content={SITE.description} />
 <meta name="twitter:image" content={canonicalImageSrc} />
 <meta name="twitter:image:alt" content={imageAlt} />
+<meta name='twitter:url' content={canonicalURL} />
+
+<!-- Browser styles tags -->
+<meta name='msapplication-TileColor' content='#FFDADA' />
+<meta name='msapplication-tap-highlight' content='no' />
+<meta name='theme-color' content='#FFDADA' />
+
+<!-- Ios tags -->
+<link rel='apple-touch-icon' href='/icons/touch-icon-iphone.png' />
+<link rel='apple-touch-icon' sizes='152x152' href='/icons/touch-icon-ipad.png' />
+<link rel='apple-touch-icon' sizes='180x180' href='/icons/touch-icon-iphone-retina.png' />
+<link rel='apple-touch-icon' sizes='167x167' href='/icons/touch-icon-ipad-retina.png' />
+<link rel='icon' type='image/png' sizes='32x32' href='/icons/favicon-32x32.png' />
+<link rel='icon' type='image/png' sizes='16x16' href='/icons/favicon-16x16.png' />
+<link rel='mask-icon' href='/favicon.svg' color='#FFDADA' />
+<link rel='shortcut icon' href='/favicon.svg' />
