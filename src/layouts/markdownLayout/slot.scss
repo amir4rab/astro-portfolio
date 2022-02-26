@@ -1,5 +1,19 @@
+@import '../../styles/baseStyles';
+
+@include forDesktopUp {
+  .display {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 5vh;
+  }
+}
 .slot {
-  margin-top: 5vh;
+  @include forDesktopUp {
+    width: 67.5%;
+  }
   h2 {
     padding: 1rem 0;
   }

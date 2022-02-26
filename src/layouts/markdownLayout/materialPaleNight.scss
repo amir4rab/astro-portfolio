@@ -1,3 +1,5 @@
+@import '../../styles/baseStyles';
+
 $background-code: #292D3E;
 $white-code: #ffffff;
 $black-code: #000000;
@@ -18,7 +20,45 @@ pre {
 	background-color: $background-code;
 	border-radius: .5rem;
 	color: $white-code;
+	position: relative;
+
 	overflow-x: scroll;
+	&::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: transparentize( $highlight, .5 );
+    border-radius: .4rem;
+  }
+}
+
+pre .copy-button {
+	display: block;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+
+	border: none;
+	background: transparentize(lighten( $background-code, 15 ), .5);
+	color: $white-code;
+	padding: .6em 1.5em;
+	&:hover {
+		cursor: pointer;
+	}
+	&:hover, &:focus-visible {
+		background: lighten( $background-code, 20 );
+	}
+	&:active {
+		background: lighten( $background-code, 15 );
+		color: $blue-code;
+	}
 }
 
 .language-css > code,

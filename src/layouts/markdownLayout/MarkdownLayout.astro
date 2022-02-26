@@ -1,9 +1,11 @@
 ---
 import Head from '../../components/head/HeadCommon.astro';
 import MainLayout from '../main/MainLayout.astro';
-import ProjectView from '../../components/projects/projectView/projectView.tsx'
-import './materialPaleNight.scss'
+import ProjectView from '../../components/projects/projectView/projectView.svelte';
+import RightSidebar from '../../components/rightSidebar/rightSidebar.svelte';
+import './materialPaleNight.scss';
 import './slot.scss';
+
 const { content } = Astro.props;
 ---
 <html>
@@ -13,9 +15,40 @@ const { content } = Astro.props;
   <body>
     <MainLayout>
       { content.type === 'project' ? <ProjectView client:idle projectData={ content } key='' projectPage={ true }/> : null }
-      <section class="slot">
-        <slot/>
-      </section>
+      <div class='display'>      
+        <RightSidebar client:idle contentArr={ content.astro.headers } />
+        <section class="slot">
+          { content.type === 'blog' ? <img src={ content.thumbnail } alt='thumbnail' /> : null }
+          <slot/>
+        </section>
+      </div>
     </MainLayout>
   </body>
 </html>
+
+<script>
+  const elements = document.getElementsByTagName('pre');
+  for( let i = 0; i < elements.length; i++ ) {
+    const preElement = elements[i];
+    const innerText = preElement.innerText;
+    const button = document.createElement('button');
+    button.innerText = 'Copy';
+    button.setAttribute('class', 'copy-button');
+    preElement.addEventListener('scroll', (e) => {
+      button.style = `transform:translateX(${e.target.scrollLeft}px)`
+    });
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(innerText);
+        if( button.innerText === 'Copied') return;
+        button.innerText = 'Copied';
+        setTimeout( () => {
+          button.innerText = 'Copy';
+        }, 1000 );
+      } catch( err ) {
+        console.error(err)
+      }
+    })
+    preElement && preElement.appendChild(button);
+  }
+</script>

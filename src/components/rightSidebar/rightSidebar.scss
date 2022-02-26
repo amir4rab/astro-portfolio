@@ -1,0 +1,71 @@
+@import '../../styles/baseStyles';
+
+.rightSidebar {
+  display: none;
+  @include forDesktopUp {
+    width: 27.5%;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background: $black-2;
+    padding: 2rem;
+    position: sticky;
+    top: 10vh;
+    border-radius: .5rem;
+    .link {
+      text-decoration: none;
+      color: $white-0;
+      &:hover, &:focus-visible {
+        text-decoration: underline;
+        color: $highlight;
+      }
+      &.depth-1 {
+        color: $highlight;
+        font-size: 1.25rem;
+        font-weight: bold;
+        &:not(:first-child) {
+          padding-top: 2rem;
+        }
+      }
+      &.depth-2 {
+        color: $highlight;
+        font-size: 1.15rem;
+        font-weight: bold;
+        &:not(:first-child) {
+          padding-top: 1.75rem;
+        }
+      }
+      &.depth-3 {
+        margin-left: .25rem;
+        font-size: .9rem;
+        &:not(:first-child) {
+          padding-top: .5rem;
+        }
+      }
+      &.depth-4 {
+        font-size: .8rem;
+        margin-left: .5rem;
+        &:not(:first-child) {
+          padding-top: .5rem;
+        }
+      }
+      &.depth-5 {
+        font-size: .8rem;
+        margin-left: .75rem;
+        opacity: .75;
+        &:not(:first-child) {
+          padding-top: .5rem;
+        }
+      }
+      &.depth-5 {
+        font-size: .8rem;
+        margin-left: 1rem;
+        opacity: .5;
+        &:not(:first-child) {
+          padding-top: .5rem;
+        }
+      }
+    }
+  }
+}
