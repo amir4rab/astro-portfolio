@@ -7,10 +7,11 @@ import './materialPaleNight.scss';
 import './slot.scss';
 
 const { content } = Astro.props;
+const image = content.thumbnail !== null ? { src: content.thumbnail, alt: content.shortInfo } : null;
 ---
 <html>
   <head>
-    <Head title={ content.title } />
+    <Head title={ content.title } image={ image } />
   </head>
   <body>
     <MainLayout>
@@ -18,7 +19,7 @@ const { content } = Astro.props;
       <div class='display'>      
         <RightSidebar client:idle contentArr={ content.astro.headers } />
         <section class="slot">
-          { content.type === 'blog' ? <img src={ content.thumbnail } alt='thumbnail' /> : null }
+          { content.type === 'blog' && content.thumbnail !== null ? <img src={ content.thumbnail } alt='thumbnail' /> : null }
           <slot/>
         </section>
       </div>

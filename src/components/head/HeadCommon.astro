@@ -2,11 +2,15 @@
 import HeadSEO from './HeadSEO.astro';
 export interface Props {
 	title?: string;
+	image?: null | {
+		src: string,
+		alt: string,
+	};
 }
-const { title= 'amir4rab' } = Astro.props;
+const { title= 'amir4rab', image= null } = Astro.props;
 ---
 <!-- SEO -->
-<HeadSEO canonicalURL='https://amir4rab.com' site='https://amir4rab.com' />
+<HeadSEO title={ title } image={ image }  />
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />

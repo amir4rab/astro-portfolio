@@ -1,4 +1,13 @@
 ---
+export interface Props {
+	image?: null | {
+		src: string,
+		alt: string,
+	};
+	title?: null | string;
+}
+const { title= null, image= null } = Astro.props as Props;
+
 const OPEN_GRAPH = {
   image: {
 		src: '/banner.png',
@@ -13,9 +22,9 @@ const SITE = {
 };
 const canonicalURL = 'https://amir4rab.com'
 
-const formattedContentTitle = SITE.title;
-const canonicalImageSrc = `${canonicalURL}${OPEN_GRAPH.image.src}`;
-const imageAlt = OPEN_GRAPH.image.alt;
+const formattedContentTitle = title !== null ? title : SITE.title;
+const canonicalImageSrc = `${canonicalURL}${ image !== null ? image.src : OPEN_GRAPH.image.src}`;
+const imageAlt = image !== null ? image.alt : OPEN_GRAPH.image.alt;
 ---
 
 <!-- Page Metadata -->
