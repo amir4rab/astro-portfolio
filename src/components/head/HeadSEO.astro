@@ -15,7 +15,7 @@ const canonicalURL = 'https://amir4rab.com'
 
 const formattedContentTitle = SITE.title;
 const imageSrc = OPEN_GRAPH.image.src;
-const canonicalImageSrc = new URL(imageSrc, Astro.site);
+const canonicalImageSrc = `${canonicalURL}${OPEN_GRAPH.image.src}`;
 const imageAlt = OPEN_GRAPH.image.alt;
 ---
 
