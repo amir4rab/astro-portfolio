@@ -6,6 +6,7 @@
 @include forDesktopUp {
   .mainLayout {
     max-width: $desktopMaxWidth;
+    width: $desktopWidth;
     margin: auto;
     padding: 10vh 0 5vh 0;
   }
