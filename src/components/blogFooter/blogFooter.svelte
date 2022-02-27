@@ -1,7 +1,7 @@
 <script>
   export let shareText = 'Hi i am amir arab, a Front-end Developer';
   import { onMount } from 'svelte';
-  import './blogFooter.scss';
+  // import './blogFooter.scss';
 
   let shareingText = shareText;
   let currentAddress = 'https://amir4rab.com';
@@ -56,7 +56,65 @@
   
 </script>
 
-<slot />
+<style lang='scss'>
+  @import '../../styles/baseStyles';
+  .blog-footer{
+    padding-top: 2.5vh;
+    margin-top: 2.5vh;
+    border-top: .1rem solid transparentize($white-0, .75);
+    .title{
+      font-size: 1rem;
+      color: $highlight;
+      padding-top: .5rem;
+    }
+    .row {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 1rem 0;
+      button:not(:last-child), a:not(:last-child) {
+        margin-right: .5rem;
+      }
+      button, a {
+        background: $black-2;
+        border: none;
+        color: $highlight;
+        svg {
+          fill: $highlight;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        &:hover, &:focus-visible {
+          background: transparentize($highlight, .75);
+        }
+        &:active {
+          color: $black-2;
+          svg {
+            fill: $black-2;
+          }
+          background: transparentize($highlight, .25);
+        }
+      }
+    }
+    .social-media-button{
+      border-radius: 50%;
+      width: 2.5rem;
+      padding: 0;
+      height: 2.5rem;
+      position: relative;
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+</style>
+
 <footer class='blog-footer'>
   <p class='title'>Have you found this post helpfull?</p>
   <div class='row'>
