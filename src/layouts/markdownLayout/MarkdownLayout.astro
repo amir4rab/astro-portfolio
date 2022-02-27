@@ -24,7 +24,7 @@ const image = content.thumbnail !== null ? { src: content.thumbnail, alt: conten
           <slot/>
         </section>
       </div>
-      { content.type === 'blog' ? <BlogFooter slug={ content.slug } client:idle shareText={ content.title } /> : null }
+      { content.type === 'blog' ? <BlogFooter slug={ content.slug } shareText={ content.title } /> : null }
     </MainLayout>
   </body>
 </html>
