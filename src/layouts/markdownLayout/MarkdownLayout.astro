@@ -3,6 +3,7 @@ import Head from '../../components/head/HeadCommon.astro';
 import MainLayout from '../main/MainLayout.astro';
 import ProjectView from '../../components/projects/projectView/projectView.svelte';
 import RightSidebar from '../../components/rightSidebar/rightSidebar.svelte';
+import BlogFooter from '../../components/blogFooter/blogFooter.svelte';
 import './materialPaleNight.scss';
 import './slot.scss';
 
@@ -23,6 +24,7 @@ const image = content.thumbnail !== null ? { src: content.thumbnail, alt: conten
           <slot/>
         </section>
       </div>
+      { content.type === 'blog' ? <BlogFooter client:only='svelte' shareText={ content.title } /> : null }
     </MainLayout>
   </body>
 </html>
