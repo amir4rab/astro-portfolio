@@ -1,6 +1,6 @@
 @import '../../styles/baseStyles';
 
-.blog-footer{
+.blogFooter{
   padding-top: 2.5vh;
   margin-top: 2.5vh;
   border-top: .1rem solid transparentize($white-0, .75);
@@ -39,7 +39,7 @@
       }
     }
   }
-  .social-media-button{
+  .socialMediaButton{
     border-radius: 50%;
     width: 2.5rem;
     padding: 0;
