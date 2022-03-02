@@ -34,16 +34,3 @@ function Navbar() {
 }
 
 export default Navbar
-
-// <style lang='scss'>
-//   @import '../../styles/baseStyles';
-//   .navbar {
-//     position: sticky;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     padding: .4rem 2rem;
-//     display: flex;
-//     justify-content: space-between;
-//   }
-// </style>

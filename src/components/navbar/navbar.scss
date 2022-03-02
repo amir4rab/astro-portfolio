@@ -74,6 +74,10 @@
 
 @include forDesktopUp {
   .main-navbar {
+    @supports ( backdrop-filter: blur(.5rem) ) {
+      backdrop-filter: blur(.5rem);
+      background: transparentize($black-0, .75);
+    }
     max-width: $desktopMaxWidth;
     margin: auto;
     padding: 0;
