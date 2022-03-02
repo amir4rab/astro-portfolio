@@ -13,16 +13,19 @@ const { title= 'amir4rab', image= null } = Astro.props;
 <HeadSEO title={ title } image={ image }  />
 
 <!-- Global Metadata -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width' />
 
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 
-<link rel="sitemap" href="/sitemap.xml" />
+<link rel='sitemap' href='/sitemap.xml' />
 <title>{ title }</title>
-<meta name="description" content="I am amir arab, a front-end developer.">
+<meta name='description' content='I am amir arab, a front-end developer.'>
+
+<!-- Fonts -->
+<link rel='stylesheet' href='/fonts/index.css'> 
 
 <!-- Global CSS -->
-<style global lang="scss">
-	@import "../../styles/global.scss";
+<style global lang='scss'>
+	@import '../../styles/global.scss';
 </style>
