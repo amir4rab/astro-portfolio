@@ -4,10 +4,11 @@ type: project
 title: Link hub
 slug: link-hub
 thumbnail: /images/projects/link-hub.png
-specialProject: true
+specialProject: false
 github: https://github.com/amir4rab/linkhub
 websiteAddress: https://amir4rab-linkhub.vercel.app/
 npmPackage: null
+mainLibraries:
 tags:
   - socket.io
   - uuid

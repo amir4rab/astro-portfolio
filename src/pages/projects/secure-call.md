@@ -27,6 +27,18 @@ tags:
   - react-icons
   - remark
   - remark-html
+gallery:
+  - { type: mobile, url: /images/secure-call/secure-call-0.jpg }
+  - { type: mobile, url: /images/secure-call/secure-call-1.jpg }
+  - { type: mobile, url: /images/secure-call/secure-call-2.jpg }
+  - { type: mobile, url: /images/secure-call/secure-call-3.jpg }
+  - { type: mobile, url: /images/secure-call/secure-call-4.jpg }
+  - { type: mobile, url: /images/secure-call/secure-call-5.jpg }
+mainLibraries: 
+  - socket.io
+  - framer-motion
+  - mongodb
+  - next.js
 shortInfo: 'Secure call is free, open-source, end-to-end encrypted, video/audio calling website.'
 ---
 

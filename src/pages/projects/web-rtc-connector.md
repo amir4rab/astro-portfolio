@@ -4,7 +4,7 @@ type: project
 title: Web Rtc Connector
 slug: web-rtc-connector
 thumbnail: null
-specialProject: true
+specialProject: false
 github: https://github.com/amir4rab/webRtcConnector
 websiteAddress: https://web-rtc-connector.vercel.app
 npmPackage: https://www.npmjs.com/package/@amir4rab/web-rtc-connector-client
@@ -14,6 +14,7 @@ tags:
   - validator
   - npm-project
   - open-source-project
+mainLibraries:
 shortInfo: 'WebRtcConnector is a simple connector for p2p connection throw WebRtc Standard. socket.io has been used in booth server and client of this project.'
 ---
 

@@ -4,7 +4,7 @@ type: project
 title: Key Event
 slug: key-event
 thumbnail: null
-specialProject: true
+specialProject: false
 github: https://github.com/amir4rab/keyevent
 websiteAddress: null
 npmPackage: https://www.npmjs.com/package/@amir4rab/keyevent
@@ -12,6 +12,7 @@ tags:
   - typescript
   - npm-project
   - open-source-project
+mainLibraries:
 shortInfo: 'key event is a simple and light library that helps you with invoking functions upon Specified key combinations ( eg: showing a modal when "Control Left" and "X" are clicked simultaneously ).'
 ---
 

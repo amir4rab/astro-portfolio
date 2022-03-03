@@ -8,6 +8,7 @@ export type Project = {
   npmPackage: string | null,
   tags: string[],
   shortInfo: string,
+  mainLibraries: [],
   astro: {
     header: object[],
     source: string,

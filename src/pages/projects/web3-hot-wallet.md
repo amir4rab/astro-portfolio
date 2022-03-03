@@ -4,7 +4,7 @@ type: project
 title: Web3 hot wallet
 slug: web3-hot-wallet
 thumbnail: /images/projects/web3-hot-wallet.png
-specialProject: true
+specialProject: false
 github: https://github.com/amir4rab/web3wallet
 websiteAddress: https://web3wallet.amir4rab.site
 npmPackage: null
@@ -16,6 +16,7 @@ tags:
   - open-source-project
   - react.js
   - web3.js
+mainLibraries:
 shortInfo: 'A simple full-stack, pwa, Ethereum and Polygon wallet, developed with Next.js.'
 ---
 
