@@ -1,0 +1,45 @@
+---
+import Title from '../general/title/Title.astro';
+import ProjectView from './ProjectView.astro';
+import { Project } from '../../types/Project';
+import { Icon } from 'astro-icon';
+
+export interface Props {
+  projectsData: Project[]
+};
+
+const { projectsData } = Astro.props;
+
+---
+<style lang='scss'>
+  @import '../../styles/baseStyles';
+  .navbar-bottom {
+    padding: 2rem;
+    border-radius: .5rem;
+    background: $black-2;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+
+    svg {
+      margin-right: .75rem;
+      width: 2rem;
+      height: 2rem;
+      color: $highlight;
+    }
+  }
+
+</style>
+
+<Title>
+  Projects
+</Title>
+{
+  projectsData.map(( projectData: Project ) => <ProjectView projectData={ projectData } />)
+}
+<nav class='navbar-bottom' aria-label='bottom-nav'>
+  <Icon name='ion:information-circle' />
+  <p>Interested to see more? click <a href='/all-projects'>here</a> to see rest of my projects</p>
+</nav>

@@ -1,0 +1,143 @@
+---
+import { Project } from '../../types/Project';
+export interface Props {
+  projectData: Project
+};
+// type Library = {
+//   url: string, type: string
+// }
+import LibrariesIcon from './LibrariesIcons.astro';
+import ProjectImageSlider, { ImagesArray } from './projectImageSlider/projectImageSlider.tsx';
+
+
+const { projectData: project } = Astro.props;
+---
+
+<style lang='scss'>
+  @import '../../styles/baseStyles';
+
+
+  article {
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: .1rem solid transparentize($white-0, .75);
+    }
+    width: 100%;
+    img {
+      max-width: 100%;
+    }
+  };
+
+
+
+  .thumbnail {
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+  }
+
+  .title {
+    color: $highlight;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include forDesktopUp {
+      width: 50%;
+    }
+  }
+  .main-libraries {
+    padding: 2rem 0;
+    .subtitle {
+      padding-bottom: .75rem;
+    }
+    .main-library {
+      width: 2rem;
+      height: 2rem;
+      opacity: .5;
+      transition: opacity .15s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      .tag {
+        font-size: .9rem;
+        background: $black-2;
+        padding: .5em .75em;
+        border-radius: .5rem;
+        margin-right: .5rem;
+        margin-bottom: .5rem;        
+      }
+    }
+  }
+  .actions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    @include forDesktopUp {
+      justify-content: flex-start;
+    }
+
+    flex-grow: 1;
+    a {
+      padding: 1rem 2rem;
+      background: $highlight;
+      border-radius: .5rem;
+      color: $black-2;
+      transition: background .15s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+      }
+      &:hover, &:focus-visible {
+        background: darken( $highlight, 7 );
+      }
+    }
+  }
+
+</style>
+
+<article>
+  <img class='thumbnail' src={ project.thumbnail } />
+  <div class='info'>
+    <div class='details'>
+      <h2 class='title'>{ project.title }</h2>
+      <p>{ project.shortInfo }</p>
+      <div class='main-libraries'>
+        <p class='subtitle'>Main libraries:</p>
+        <div>
+          {
+            project.mainLibraries.map((tag: string) => <LibrariesIcon className='main-library' name={ tag } />)
+          }
+        </div>
+      </div>
+      <div class='main-libraries'>
+        <p class='subtitle'>libraries:</p>
+        <div class='tags'>
+          {
+            project.tags.map((tag: string) => <p class='tag'>{ tag }</p>)
+          }
+        </div>
+      </div>
+      <div class='actions'>
+        <a href={ '/projects/' + project.slug }>Read more</a>
+      </div>
+    </div>
+    <ProjectImageSlider client:load imagesArray={ project.gallery as ImagesArray } />
+  </div>
+</article>

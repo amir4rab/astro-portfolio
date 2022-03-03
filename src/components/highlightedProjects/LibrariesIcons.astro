@@ -1,0 +1,20 @@
+---
+export interface Props {
+  name: string,
+  className?: string
+}
+import { Icon } from 'astro-icon';
+const { name, className= '' } = Astro.props;
+const getName = ( name: string ) => {
+  switch ( name ) {
+    case 'socket.io': return 'simple-icons:socketdotio';
+    case 'framer-motion': return 'simple-icons:framer';
+    case 'mongodb': return 'simple-icons:mongodb';
+    case 'next.js': return 'simple-icons:nextdotjs';
+    default: {
+      return 'simple-icons:astro';
+    }
+  }
+}
+---
+<Icon class={ className } name={ getName(name) }/>
