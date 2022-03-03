@@ -1,11 +1,10 @@
 ---
 import Head from '../components/head/HeadCommon.astro';
 import MainLayout from '../layouts/main/MainLayout.astro';
-import HighlightedProjects from '../components/highlightedProjects/HighlightedProjects.astro';
+import Projects from '../components/projects/Projects.astro';
 
 import { Project } from '../types/Project.ts'
 const projectsData = Astro.fetchContent('./projects/*.md');
-const specialProjects = projectsData.filter(project => project.specialProject);
 ---
 <html lang="en">
 	<head>
@@ -13,7 +12,7 @@ const specialProjects = projectsData.filter(project => project.specialProject);
 	</head>
 	<body>
 		<MainLayout>
-			<HighlightedProjects projectsData={ specialProjects as Project[] } />
+			<Projects projectsData={ projectsData as Project[] } />
 		</MainLayout>
 	</body>
 </html>
