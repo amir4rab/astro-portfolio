@@ -11,9 +11,6 @@ const { href, target='_blank', rel='noreferrer' } = Astro.props;
   .link {
     color: $highlight;
     padding: 0 .2rem;
-    &:hover, &:focus-visible {
-      text-decoration: underline;
-    }
   }
 </style>
 <a class='link' href={ href } target={ target } rel={ rel }><slot /></a>

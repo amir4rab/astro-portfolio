@@ -43,6 +43,9 @@ input {
 
 a {
   color: $highlight;
+  &:hover, &:focus-visible {
+    text-decoration: underline;
+  }
 }
 
 
