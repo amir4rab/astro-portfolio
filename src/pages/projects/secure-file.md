@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/markdownLayout/MarkdownLayout.astro
 type: project
-title: Secure Call
+title: Secure File
 slug: secure-file
 thumbnail: /images/projects/secure-file.png
 specialProject: true
