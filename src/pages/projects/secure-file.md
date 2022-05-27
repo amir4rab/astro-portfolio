@@ -20,6 +20,8 @@ tags:
   - jest
   - gray-matter
   - marked
+  - open-source-project
+  - website-project
 gallery:
   - { type: mobile, url: /images/secure-file/secure-file-0.png }
   - { type: mobile, url: /images/secure-file/secure-file-1.png }
