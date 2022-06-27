@@ -4,9 +4,9 @@ type: project
 title: Secure Call
 slug: secure-call
 thumbnail: /images/projects/secure-call.png
-specialProject: true
-github: null
-websiteAddress: https://securecall.amir4rab.com
+specialProject: false
+github: https://github.com/amir4rab/secureCall
+websiteAddress: null
 npmPackage: null
 tags:
   - socket.io
@@ -19,7 +19,7 @@ tags:
   - react.js
   - sass
   - website-project
-  - close-source-project
+  - open-source-project
   - jsonwebtoken
   - '@amir4rab/web-rtc-connector-client'
   - gray-matter
@@ -43,6 +43,8 @@ shortInfo: 'Secure call is free, open-source, end-to-end encrypted, video/audio 
 ---
 
 ## Secure call
+
+### Sorry, This project is no longer hosted
 
 ### About
 

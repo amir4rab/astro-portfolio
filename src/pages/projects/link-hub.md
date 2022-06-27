@@ -6,7 +6,7 @@ slug: link-hub
 thumbnail: /images/projects/link-hub.png
 specialProject: false
 github: https://github.com/amir4rab/linkhub
-websiteAddress: https://amir4rab-linkhub.vercel.app/
+websiteAddress: null
 npmPackage: null
 mainLibraries:
 tags:
@@ -25,6 +25,8 @@ shortInfo: 'WebRtcConnector is a simple connector for p2p connection throw WebRt
 ---
 
 ## Linkhub
+
+### Sorry, This project is no longer hosted
 
 ## 👾 About
 
